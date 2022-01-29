@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        sort(nums.begin(),nums.end());
+        int p1=0,p2=n-1;
+        while(p1<p2){
+            int tempSum=nums[p1]+nums[p2];
+            if(tempSum==target){
+                break;
+            }else if(tempSum<target){
+                p1++;
+            }else{
+                p2--;
+            }
+        }
+        vector<int> res;
+        res.push_back(p1);
+        res.push_back(p2);
+        return res;
+    }
+};
